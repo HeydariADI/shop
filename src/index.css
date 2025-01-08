@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+.btn {
+  @apply w-full p-2 font-bold rounded-lg transition-all duration-300  bg-green-500 text-white text-base shadow-lg hover:bg-gray-200 hover:text-green-500;
+}
+.item {
+  @apply border border-green-200 w-64 h-auto bg-gray-50 rounded-md p-4 mt-4 flex flex-col justify-center items-center gap-5;
+}
+.image {
+  @apply w-24 h-28  rounded-lg;
+}
+.items {
+  @apply grid grid-cols-4 gap-4;
+}
+
+.title {
+  @apply text-gray-900  font-medium text-base;
+}
+.modal {
+  @apply w-1/2 min-h-80 absolute -translate-y-2/4 -translate-x-2/4 bg-slate-900 p-4 rounded-lg shadow-slate-600;
+}
+.backdrop {
+  @apply w-screen h-screen fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center;
+}
+.modal__header {
+  @apply flex items-center justify-center mb-1 pb-1 border-b-slate-600;
+}
+.icon {
+  @apply w-2 h-2;
+}
+.modal__header .close {
+  @apply text-slate-600;
+}

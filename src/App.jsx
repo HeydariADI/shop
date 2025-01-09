@@ -6,6 +6,7 @@ import Products from "./components/Products/Products";
 import Modal from "./components/Modal/Modal";
 import Cart from "./components/Cart/Cart";
 import Loader from "./components/Loading/Loader";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useLocalStorage("ITEMS", []);
 
   useEffect(() => {
     async function fetchData() {
@@ -66,6 +67,7 @@ function App() {
             products={products}
             onSearchChange={handleSearchChange}
             setShowModal={setShowModal}
+            cartItems={cartItems}
           />
           <Products
             products={filteredProducts.length > 0 ? filteredProducts : products}

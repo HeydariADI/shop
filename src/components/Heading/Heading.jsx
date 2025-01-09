@@ -1,7 +1,7 @@
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 // import { ShoppingCartIcon } from 'react-icons/fa';
 
-function Heading({ onSearchChange, setShowModal }) {
+function Heading({ onSearchChange, setShowModal, cartItems }) {
   const handleSearchChange = (e) => {
     onSearchChange(e.target.value);
   };
@@ -15,11 +15,13 @@ function Heading({ onSearchChange, setShowModal }) {
         className="w-1/2 p-4 m-5 border border-gray-200 focus:border-gray-400 rounded-lg text-gray-500 hover:bg-green-50 focus:shadow-lg"
         placeholder="Search for products..."
       />
-
-      <ShoppingCartIcon
-        className="w-6 h-6 text-white cursor-pointer"
+      <button
+        className="flex justify-center items-center "
         onClick={() => setShowModal(true)}
-      />
+      >
+        <ShoppingCartIcon className="cart " />
+        <span className="cart_badge">{cartItems.length}</span>
+      </button>
     </div>
   );
 }

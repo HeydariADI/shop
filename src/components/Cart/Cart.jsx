@@ -1,6 +1,13 @@
 import { TrashIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 function Cart({ products, onDelete }) {
+  const initialValue = 0;
+  const totalPrice = products.reduce(
+    (accumulator, curentValue) => accumulator + curentValue.price,
+    initialValue
+  );
+
   if (products.length === 0)
     return (
       <p className="w-80 h-80 p-4 text-red-400 font-bold">
@@ -10,7 +17,9 @@ function Cart({ products, onDelete }) {
 
   return (
     <div>
-      <h2 className="border-b-2 border-slate-900 mb-2 p-2">Your Cart</h2>
+      <h2 className="border-b-2 border-green-800 mb-2 p-2 font-bold">
+        Your Cart
+      </h2>
       {products.map((product, index) => (
         <div
           key={index}
@@ -33,7 +42,13 @@ function Cart({ products, onDelete }) {
           />
         </div>
       ))}
-      <button className="btn mt-2">to</button>
+      <div className="flex flex-col">
+        <div className="total flex justify-between items-center  p-4 mt-4 text-lg font-medium">
+          <p className="">Total Price :</p>
+          <p className="">{totalPrice.toFixed(2)}$</p>
+        </div>
+        <button className="btn ">Pyment</button>
+      </div>
     </div>
   );
 }

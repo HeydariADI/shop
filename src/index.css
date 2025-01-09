@@ -23,16 +23,16 @@ button {
 }
 
 .btn {
-  @apply w-full p-2 font-bold rounded-lg transition-all duration-300  bg-green-500 text-white text-base shadow-lg hover:bg-gray-200 hover:text-green-500;
+  @apply w-full p-2 mt-2 font-bold rounded-lg transition-all duration-300  bg-green-500 text-white text-base shadow-lg hover:bg-gray-200 hover:text-green-500;
 }
 .item {
-  @apply border border-green-200 w-64 h-auto bg-gray-50 rounded-md p-4 mt-4 flex flex-col justify-center items-center gap-5;
+  @apply border border-green-200 w-64 h-80 bg-gray-50 rounded-md p-4 mt-4 flex flex-col justify-center items-center gap-5;
 }
 .image {
   @apply w-24 h-28  rounded-lg;
 }
 .items {
-  @apply grid grid-cols-4 gap-4;
+  @apply grid grid-cols-4 gap-4 mb-5;
 }
 
 .title {
@@ -52,4 +52,11 @@ button {
 }
 .modal__header .close {
   @apply text-slate-600;
+}
+
+.cart {
+  @apply w-6 h-6 text-white font-bold cursor-pointer relative;
+}
+.cart_badge {
+  @apply flex justify-center items-center text-white mb-6 ml-3 absolute text-xs font-medium bg-red-600 w-4 h-4 rounded-full;
 }

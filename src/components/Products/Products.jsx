@@ -4,7 +4,7 @@ function Products({ products, onAddToCart }) {
   }
 
   return (
-    <div className="items">
+    <div className="items ">
       {products.map((product) => (
         <div className="item" key={product.id}>
           <img className="image" src={product.image} alt={product.title} />

@@ -10,11 +10,10 @@ body {
 }
 
 * {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  outline: none;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 
 button {
@@ -23,16 +22,17 @@ button {
 }
 
 .btn {
-  @apply w-full p-2 mt-2 font-bold rounded-lg transition-all duration-300  bg-green-500 text-white text-base shadow-lg hover:bg-gray-200 hover:text-green-500;
-}
-.item {
-  @apply border border-green-200 w-64 h-80 bg-gray-50 rounded-md p-4 mt-4 flex flex-col justify-center items-center gap-5;
-}
-.image {
-  @apply w-24 h-28  rounded-lg;
+  @apply w-full p-2 mt-2  font-bold rounded-lg transition-all duration-300  bg-pink-500 text-white text-base shadow-lg hover:bg-gray-200 hover:text-pink-500;
 }
 .items {
-  @apply grid grid-cols-4 gap-4 mb-5;
+  @apply grid grid-cols-4  space-x-5 space-y-6 p-4;
+}
+
+.item {
+  @apply border border-violet-400 w-64 max-h-96  rounded-md p-4 flex flex-col justify-center items-center gap-5;
+}
+.image {
+  @apply w-28 h-28  rounded-xl;
 }
 
 .title {
@@ -58,5 +58,9 @@ button {
   @apply w-6 h-6 text-white font-bold cursor-pointer relative;
 }
 .cart_badge {
-  @apply flex justify-center items-center text-white mb-6 ml-3 absolute text-xs font-medium bg-red-600 w-4 h-4 rounded-full;
+  @apply flex justify-center items-center text-white mb-6 ml-3 absolute text-xs font-medium bg-pink-600 w-4 h-4 rounded-full;
+}
+
+.login {
+  @apply w-6 h-6 text-white font-bold cursor-pointer relative;
 }

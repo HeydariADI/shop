@@ -7,6 +7,7 @@ import Modal from "./components/Modal/Modal";
 import Cart from "./components/Cart/Cart";
 import Loader from "./components/Loading/Loader";
 import useLocalStorage from "./hooks/useLocalStorage";
+import Login from "./components/Login";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -15,6 +16,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [cartItems, setCartItems] = useLocalStorage("ITEMS", []);
+  const [modalContent, setModalContent] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
@@ -57,7 +59,7 @@ function App() {
   };
 
   return (
-    <div className="app flex flex-col gap-7">
+    <div className="app flex flex-col justify-center items-center p-4">
       <Toaster />
       {loading ? (
         <Loader />
@@ -67,6 +69,7 @@ function App() {
             products={products}
             onSearchChange={handleSearchChange}
             setShowModal={setShowModal}
+            setModalContent={setModalContent}
             cartItems={cartItems}
           />
           <Products
@@ -74,7 +77,10 @@ function App() {
             onAddToCart={handleAddToCart}
           />
           <Modal show={showModal} onClose={closeModal}>
-            <Cart products={cartItems} onDelete={handleDelete} />
+            {modalContent === "cart" && (
+              <Cart products={cartItems} onDelete={handleDelete} />
+            )}
+            {modalContent === "login" && <Login />}
           </Modal>
         </>
       )}

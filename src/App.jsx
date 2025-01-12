@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import useLocalStorage from "./hooks/useLocalStorage";
+import Loader from "./components/Loading/Loader";
 import Heading from "./components/Heading/Heading";
 import Products from "./components/Products/Products";
 import Modal from "./components/Modal/Modal";
 import Cart from "./components/Cart/Cart";
-import Loader from "./components/Loading/Loader";
-import useLocalStorage from "./hooks/useLocalStorage";
-import Login from "./components/Login";
+import Login from "./components/Login/Login";
 
 function App() {
   const [products, setProducts] = useState([]);

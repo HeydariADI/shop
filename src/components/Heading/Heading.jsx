@@ -2,13 +2,11 @@ import {
   ArrowLeftEndOnRectangleIcon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
-import { useState } from "react";
-import Modal from "../Modal/Modal";
-import Login from "../Login";
+
 // import { ShoppingCartIcon } from 'react-icons/fa';
 
 function Heading({ onSearchChange, setShowModal, cartItems, setModalContent }) {
-  const [isOpenLogin, setIsOpenLogin] = useState(false);
+  // const [isOpenLogin, setIsOpenLogin] = useState(false);
   const handleSearchChange = (e) => {
     onSearchChange(e.target.value);
   };
@@ -23,7 +21,7 @@ function Heading({ onSearchChange, setShowModal, cartItems, setModalContent }) {
   };
 
   return (
-    <div className="heading bg-violet-500 flex  justify-between items-center  w-full  p-10">
+    <div className="heading bg-violet-900 flex  justify-between items-center  w-full  p-10">
       <h1 className="text-white font-bold text-lg ">Shoping Cart </h1>
       <input
         type="text"
